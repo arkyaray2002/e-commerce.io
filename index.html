@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://www.pngmart.com/files/7/Cart-PNG-Clipart.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik&display=swap" rel="stylesheet">
+    <title>YourCart - HOME</title>
+</head>
+<style>
+    fieldset{
+        width: 300px;
+        margin: auto;
+        padding: 10px;
+        font-family: 'Rubik', sans-serif;
+        background-color: goldenrod;
+    }
+    .area{
+        background-color: gold;
+        margin: 7px;
+        font-size: 20px;
+    }
+    .display{
+        font-size: 50px;
+    }
+    .deals{
+      width: 100px;
+      margin: auto;
+      padding: 10px;
+      background-color: #fff;
+      margin-bottom: 20px;
+      margin-left: 100px;
+    }
+    .hot-deals{
+      display: inline-block;
+    }
+    @media screen and (max-width: 500px) {
+      .hot-deals{
+        display:grid;
+      }
+      .deals{
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+    }
+</style>
+<body>
+
+ <div id="preloader"></div>
+ <script>
+  var loader = document.getElementById("preloader");
+  window.addEventListener ("load", function(){
+      loader.style.display = "none";
+  })
+</script>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" hidden></iframe>
+
+
+
+
+  <!--       HEADER        -->
+  <div class="topnav" id="myTopnav">
+    <a href="#" class="active">Home</a>
+    <a href="#" onclick="no_data()">Buy Again</a>
+    <a href="#" onclick="no_data()">My Orders</a>
+    <div class="dropdown">
+      <button class="dropbtn">what do you want to buy ?
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="electronics.php">Electronics Gadgets 📱📶💻🖥️🖱️</a>
+        <a href="groceries.php">Fresh Groceries 🥕🍆🍅🌽🌾🫑</a>
+        <a href="wearables.php">Wearables 👔👕🎽🥻👗👚👘👠</a>
+        <a href="books.php">Books 📚📖📕📘📗📙📓📒📑</a>
+      </div>
+    </div> 
+    <a href="my-cart.php">My Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+ 
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input class="searchbox" type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    function no_data() {
+      alert("You've not purchased anything from us previously !!! 🙂🙂🙂 Welcome to our 'YourCart' 🙏🏻");
+    }
+</script>
+
+
+<center><img class="bg-image" src="https://www.pngmart.com/files/7/Cart-PNG-Clipart.png" style="opacity: 50%;"><br><label style="font-size: 50px; font-weight: 100; margin-left: 50px; color: #0002ff; opacity: 50%;"><b><u>YourCart</u></b></label></center>
+
+
+<br><br><br>
+
+<fieldset>
+<center><fieldset class="area">
+            <div>
+                <a><span id="count1" class="display"></span>+ <br>Happy Customers</a>
+            </div>
+        </fieldset>
+        <fieldset class="area">
+            <div>
+                <a><span id="count2" class="display"></span>+ <br>Employee makes Hard work everyday to make us better</a>
+            </div>
+        </fieldset>
+        <fieldset class="area">
+            <div>
+                <a><span id="count3" class="display"></span>+ <br>Years Experience</a>
+            </div>  
+        </fieldset></center>
+</fieldset>
+
+<script>
+    //#region - start of - number counter animation
+const counterAnim = (qSelector, start = 0, end, duration = 1000) => {
+ const target = document.querySelector(qSelector);
+ let startTimestamp = null;
+ const step = (timestamp) => {
+  if (!startTimestamp) startTimestamp = timestamp;
+  const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+  target.innerText = Math.floor(progress * (end - start) + start);
+  if (progress < 1) {
+   window.requestAnimationFrame(step);
+  }
+ };
+ window.requestAnimationFrame(step);
+};
+//#endregion - end of - number counter animation
+
+document.addEventListener("DOMContentLoaded", () => {
+ counterAnim("#count1", 0, 5000000, 5000 );
+ counterAnim("#count2", 10, 3000, 1000);
+ counterAnim("#count3", 10, 76, 3000);
+});
+</script>
+
+
+
+<br><br><br><br><br>
+
+
+<h2 style="margin-left: 30px;">Great Deals on :</h2>
+
+<div class="hot-deals"><a href="electronics.php">
+  <fieldset class="deals">
+    <img src="png/watch-ultra.png" style="width: 150px; height: 150px; margin: auto;">
+    <label style="color: black;"><b>Great Deals on SmartWatches</b></label><br>
+    <label style="color: red; padding: auto;">Upto 50% off</label>
+  </fieldset></a>
+</div>
+
+<div class="hot-deals"><a href="electronics.php">
+  <fieldset class="deals">
+    <img src="png/s23-ultra.png" style="width: 150px; height: 150px; margin: auto;">
+    <label style="color: black;"><b>Great Deals on SmartPhones</b></label><br>
+    <label style="color: red; padding: auto;">Upto 60% off</label>
+  </fieldset></a>
+</div>
+
+<div class="hot-deals"><a href="electronics.php">
+  <fieldset class="deals">
+    <img src="png/galaxy-book.png" style="width: 150px; height: 150px; margin: auto;">
+    <label style="color: black;"><b>Great Deals on Windows Laptops</b></label><br>
+    <label style="color: red; padding: auto;">Upto 30% off</label>
+  </fieldset></a>
+</div>
+
+<div class="hot-deals"><a href="electronics.php">
+  <fieldset class="deals">
+    <img src="png/iphone13pro.png" style="width: 150px; height: 150px; margin: auto;">
+    <label style="color: black;"><b>Biggest Deals on iPhones</b></label><br>
+    <label style="color: red; padding: auto;">Upto 90% off</label>
+  </fieldset></a>
+</div>
+
+
+<div class="hot-deals"><a href="groceries.php">
+  <fieldset class="deals">
+    <img src="png/onion.png" style="width: 150px; height: 150px; margin: auto;">
+    <label style="color: black;"><b>Offers on fresh vegetables</b></label><br>
+    <label style="color: red; padding: auto;">Upto 20% off</label>
+  </fieldset></a>
+</div>
+
+
+<div class="hot-deals"><a href="wearables.php">
+  <fieldset class="deals">
+    <img src="png/kids.png" style="width: 150px; height: 150px; margin: auto; margin-top: 19px;">
+    <label style="color: black;"><b>Kids Dresses</b></label><br>
+    <label style="color: red; padding: auto;">Upto 50% off</label>
+  </fieldset></a>
+</div>
+
+<div class="hot-deals"><a href="wearables.php">
+  <fieldset class="deals">
+    <img src="png/western.png" style="width: 150px; height: 150px; margin: auto;">
+    <label style="color: black;"><b>Biggest Deals on Western Garments</b></label><br>
+    <label style="color: red; padding: auto;">Upto 40% off</label>
+  </fieldset></a>
+</div>
+
+
+<div class="hot-deals"><a href="books.php">
+  <fieldset class="deals">
+    <img src="png/book.png" style="width: 150px; height: 150px; margin: auto;">
+    <label style="color: black;"><b>Biggest Deals on Computer Books</b></label><br>
+    <label style="color: red; padding: auto;">Upto 30% off</label>
+  </fieldset></a>
+</div>
+
+
+
+
+<br><br><br><br><br>
+
+
+
+<div class="gs-footerMainConatiner">
+  <div class="gs-footerDataContainer">
+      <div class="gs-footerInnerContainer">
+          <div class="gs-about-us">
+              <div class="gs-footHeader">
+                  About Us
+              </div>
+              <div class="gs-footBody">
+                Giving service to all continents 🙂 50lakh+ Happy Customer (Since 1947)<br>Welcome to YourCart! At YourCart, we believe that shopping should be an experience, not just a transaction. Our mission is to provide you with a seamless and enjoyable online shopping journey, offering a wide range of high-quality products that enhance your life.  We are a passionate team of [number] individuals who share a common love for exceptional products and outstanding customer service. Our journey began [mention when and why you started your business], and since then, we have dedicated ourselves to curating a selection of products that cater to your needs and desires. <br> At YourCart, we are committed to: Quality, Variety, Convenience, Customer Satisfaction. Our vision for [Your E-Commerce Store Name] is to continually grow, innovate, and serve you better. We aim to become your go-to destination for all your shopping needs, delivering not just products but also inspiration and delight.<br> you for choosing YourCart for your online shopping adventures. We look forward to being a part of your journey and helping you discover the best products that add joy and convenience to your life.<br><br>Happy shopping!
+            </div>
+          </div>
+          <div class="gs-fotLinks">
+              <div class="gs-footHeader">
+                  Links
+              </div>
+              <div class="gs-footBody">
+                  <ul class="gs-links-list">
+                      <li><a href="electronics.php">Electronics Gadgets</a></li>
+                      <li><a href="groceries.php">Fresh Groceries</a></li>
+                      <li><a href="wearables.php">Wearables</a></li>
+                      <li><a href="books.php">Books</a></li>
+                      <li><a onclick="no_data()">My Orders</a></li>
+                      <li><a href="my-cart.php">MY CART</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="gs-fotLinks">
+              <div class="gs-footHeader">
+                  Categories
+              </div>
+              <div class="gs-footBody">
+                  <ul class="gs-links-list">
+                    <li><a href="electronics.php">Electronics Gadgets</a></li>
+                    <li><a href="groceries.php">Fresh Groceries</a></li>
+                    <li><a href="wearables.php">Wearables</a></li>
+                    <li><a href="books.php">Books</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <hr class="gs-footerHr">
+      <div class="gs-footerInnerContainer">
+          <div class="gs-footer-left">
+              Copyright © 2022 All Rights Reserved by <a><b>arkyaray2002</b></a>.
+          </div>
+          <div class="gs-fotter-right">
+            <p class="gs-Connect-Us"><br>Connect Us on :</p>
+              <a class="gs-social-icon"><?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.101 23.101" style="enable-background:new 0 0 23.101 23.101;" xml:space="preserve"><g><path d="M8.258,4.458c0-0.144,0.02-0.455,0.06-0.931c0.043-0.477,0.223-0.976,0.546-1.5c0.32-0.522,0.839-0.991,1.561-1.406 C11.144,0.208,12.183,0,13.539,0h3.82v4.163h-2.797c-0.277,0-0.535,0.104-0.768,0.309c-0.231,0.205-0.35,0.4-0.35,0.581v2.59h3.914 c-0.041,0.507-0.086,1-0.138,1.476l-0.155,1.258c-0.062,0.425-0.125,0.819-0.187,1.182h-3.462v11.542H8.258V11.558H5.742V7.643 h2.516V4.458z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></a>
+              <a class="gs-social-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+</body>
+</html>
